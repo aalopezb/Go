@@ -17,8 +17,8 @@ go/
 ## 🚀 How to Run
 
 ### 1. Build the Docker Image
-docker build -t hello-world-go .
-docker run -p 8000:8000 hello-world-go
+docker build -t hello_go .
+docker run -p 8000:8000 hello_go
 Open your browser and navigate to: http://localhost:8000
 
 ## Creator
