@@ -1,15 +1,24 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
+    "fmt"
+    "log"
+    "net/http"
+    "os"
 )
 
-func helloHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "Hello World with Go!")
+func handler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello World with Go!")
 }
 
 func main() {
-	http.HandleFunc("/", helloHandler)
-	http.ListenAndServe(":8000", nil)
+    port := os.Getenv("PORT")
+    if port == "" {
+        log.Fatal("PORT not set")
+    }
+
+    http.HandleFunc("/", handler)
+
+    log.Printf("Starting server on port %s...\n", port)
+    log.Fatal(http.ListenAndServe(":"+port, nil))
 }
