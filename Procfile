@@ -1,1 +1,1 @@
-web: ./Go
+web: ./main.go
