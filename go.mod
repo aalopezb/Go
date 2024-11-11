@@ -1,3 +1,3 @@
-module https://github.com/aalopezb/Go
+module github.com/aalopezb/Go
 
 go 1.20
